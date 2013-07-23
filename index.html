@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Eventou</title>	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript"  src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div data-role="page">
+	    <!-- Admin/User Panel options -->
+	    <div data-role="panel" data-position-fixed="true" data-display="reveal" id="mypanel">
+			<ul>
+				<li><a href="profile.html">$Username</a></li>
+				<li><a href="#">Create Event</a></li>
+				<li><a href="#">Admin</a></li>				
+			</ul>
+			<a href="#my-header" data-rel="close">Close panel</a>
+	        <!-- panel content goes here -->
+	    </div><!-- #mypanel -->		
+		<!-- header -->	
+		<div data-role="header" class="header">
+		    <h1>Eventou</h1>
+			<a href="#mypanel">Menu</a>
+		</div><!-- .header -->
+		<!-- list of events -->
+		<div data-role="content" class="event-list">
+			<ul data-role="listview" data-inset="false">
+			    <li><a href="#">
+			        <img width="100" height="100" style="background:#333;" />
+			        <h2>Broken Bells</h2>
+			        <p>Broken Bells</p></a>
+			    </li>
+			    <li><a href="#">
+			        <img width="100" height="100" style="background:#333;" />
+			        <h2>Warning</h2>
+			        <p>Hot Chip</p></a>
+			    </li>
+			    <li><a href="#">
+			        <img width="100" height="100" style="background:#333;" />
+			        <h2>Wolfgang Amadeus Phoenix</h2>
+			        <p>Phoenix</p></a>
+			    </li>
+			</ul>
+		</div><!-- .event-list -->
+	</div>	
+</body>
+</html>
+
