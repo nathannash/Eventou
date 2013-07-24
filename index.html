@@ -13,32 +13,35 @@
 	    <!-- Admin/User Panel options -->
 	    <div data-role="panel" data-position-fixed="true" data-display="reveal" id="mypanel">
 			<ul>
-				<li><a href="profile.html">$Username</a></li>
-				<li><a href="#">Create Event</a></li>
-				<li><a href="#">Admin</a></li>				
+				<li><a href="/Eventou/profile.html">$Username</a></li>
+				<li><a href="/Eventou/create-event.html">Create Event</a></li>
+				<li><a href="/Eventou/admin.html">Admin</a></li>				
 			</ul>
 			<a href="#my-header" data-rel="close">Close panel</a>
 	        <!-- panel content goes here -->
 	    </div><!-- #mypanel -->		
 		<!-- header -->	
 		<div data-role="header" class="header">
-		    <h1>Eventou</h1>
 			<a href="#mypanel">Menu</a>
+		    <h1>Eventou</h1>
 		</div><!-- .header -->
 		<!-- list of events -->
 		<div data-role="content" class="event-list">
-			<ul data-role="listview" data-inset="false">
-			    <li><a href="#">
+			<ul data-role="listview" data-inset="true">
+			    <li>
+					<a href="/Eventou/event-description.html">
 			        <img width="100" height="100" style="background:#333;" />
 			        <h2>Broken Bells</h2>
 			        <p>Broken Bells</p></a>
 			    </li>
-			    <li><a href="#">
+			    <li>
+					<a href="/Eventou/event-description.html">
 			        <img width="100" height="100" style="background:#333;" />
 			        <h2>Warning</h2>
 			        <p>Hot Chip</p></a>
 			    </li>
-			    <li><a href="#">
+			    <li>
+					<a href="/Eventou/event-description.html">
 			        <img width="100" height="100" style="background:#333;" />
 			        <h2>Wolfgang Amadeus Phoenix</h2>
 			        <p>Phoenix</p></a>

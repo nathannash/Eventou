@@ -2,8 +2,8 @@
 <head>
 	<title>Eventou</title>	
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-	<script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript"  src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -13,9 +13,10 @@
 	    <!-- Admin/User Panel options -->
 	    <div data-role="panel" data-position-fixed="true" data-display="reveal" id="mypanel">
 			<ul>
-				<li><a href="#">$Username</a></li>
-				<li><a href="#">Create Event</a></li>
-				<li><a href="#">Admin</a></li>				
+				<li><a href="/Eventou">Home</a></li>
+				<li><a href="/Eventou/profile.html">$Username</a></li>
+				<li><a href="/Eventou/create-event.html">Create Event</a></li>
+				<li><a href="/Eventou">Admin</a></li>				
 			</ul>
 			<a href="#my-header" data-rel="close">Close panel</a>
 	        <!-- panel content goes here -->
@@ -23,11 +24,11 @@
 		<!-- header -->	
 		<div data-role="header" class="header">
 		    <h1>Eventou</h1>
-			<a href="#mypanel">Menu</a>
+			<a data-rel="back">Back</a>
 		</div><!-- .header -->
 		<!-- list of events -->
 		<div data-role="content" class="event-list">
-			<h2>$Username</h2>
+			<h2>Administration Panel</h2>
 		</div><!-- .event-list -->
 	</div>	
 </body>

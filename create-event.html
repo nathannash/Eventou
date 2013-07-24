@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Create Event</title>	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript"  src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div data-role="page">
+		<!-- header -->	
+		<div data-role="header" class="header">
+		    <h1>Create Event</h1>
+			<a data-rel="back">Back</a>
+		</div><!-- .header -->
+		<!-- list of events -->
+		<div data-role="content" class="event-list">
+			<form action="form.php" method="post"> 
+				<label for="basic">Event name:</label>
+				<input type="text" name="name" id="basic" data-mini="true" />
+				<label for="datetime-4">Event date & time:</label>
+				<input type="datetime-local" data-clear-btn="true" name="datetime-4" id="datetime-4" value="">
+				<label for="select-native-1">Event type:</label>
+				<select name="select-native-1" id="select-native-1">
+					<option value="1">Pickup sports (basketball, soccer, football)</option>
+					<option value="2">Outdoor activities (hiking, airsoft, surfing)</option>
+					<option value="3">Common interests (photowalks, home-brewing, record collecting)</option>
+					<option value="4">Entertainment (movies, concerts, art galleries)</option>
+				</select>				
+				<label for="select-native-2">Number of participants:</label>
+				<select name="select-native-2" id="select-native-1">
+					<option value="1">4</option>
+					<option value="2">6</option>
+					<option value="3">8</option>
+					<option value="4">12</option>
+				</select>				
+				<label for="textarea-1">Description:</label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1"></textarea>
+				<input type="submit" value="Finish">
+			</form>
+		</div><!-- .event-list -->
+	</div>	
+</body>
+</html>
+
