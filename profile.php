@@ -1,25 +1,21 @@
-<html>
-<head>
-	<title>Eventou</title>	
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-	<script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript"  src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-	<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
+<?php include 'header.php';?>
 <body>
 	<div data-role="page">
 		<!-- header -->	
 		<div data-role="header" class="header">
-		    <h1>$Username</h1>
-			<a data-rel="back">Back</a>
-		</div><!-- .header -->
+		    <h1><a href="/Eventou">Eventou</a></h1>
+			<a href="/Eventou">Back</a>
+		</div>
 		<!-- list of events -->
 		<div data-role="content" class="event-list">
-			<h2>$Username</h2>
+			<h2>
+				<?php
+					session_start();
+					echo $_SESSION['username_login'];
+				?>
+			</h2>
 			<h2>My Events</h2>
-			<ul data-role="listview" data-inset="true">
+			<!--<ul data-role="listview" data-inset="true">
 			    <li><a href="#">
 			        <img width="100" height="100" style="background:#333;" />
 			        <h2>Broken Bells</h2>
@@ -35,7 +31,7 @@
 			        <h2>Wolfgang Amadeus Phoenix</h2>
 			        <p>Phoenix</p></a>
 			    </li>
-			</ul>
+			</ul>-->
 		</div><!-- .event-list -->
 	</div>	
 </body>

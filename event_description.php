@@ -1,19 +1,10 @@
-<html>
-<head>
-	<title>Create Event</title>	
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-	<script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript"  src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-	<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
+<?php include 'header.php';?>
 <body>
 	<div data-role="page">
 		<!-- header -->	
 		<div data-role="header" class="header">
-		    <h1>Create Event</h1>
-			<a data-rel="back">Back</a>
+		    <h1><a href="/Eventou">Eventou</a></h1>
+			<a href="/Eventou">Back</a>
 		</div><!-- .header -->
 		<!-- list of events -->
 		<div data-role="content" class="event-list">

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:8888/nnash_ex2/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	    <title>Exercise 2: Guestbook</title>
+        <link rel="stylesheet" href="./Exercise 2  Guestbook_files/bootstrap.css" type="text/css" media="screen" charset="utf-8">
+		<link href="http://localhost:8888/nnash_ex2/lib/css/lightbox.css" rel="stylesheet">
+        <link rel="stylesheet" href="./Exercise 2  Guestbook_files/style.css" type="text/css" media="screen" charset="utf-8">  
+		<script src="./Exercise 2  Guestbook_files/jquery.min.js"></script>		
+		<script src="./Exercise 2  Guestbook_files/lightbox-2.6.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$(".comment:odd").addClass("well");
+		});
+		</script>
+    <style type="text/css"></style></head>
+<body style="">
+	<section id="wrapper">
+		<div class="row show-grid ">
+			<div class="span4">
+								<form id="comment-form" action="" enctype="multipart/form-data" method="post">
+					<!--name-->
+					<label for="guest_name"><strong><span class="required">*</span>Guest Name:</strong></label>
+					<input id="post-name" class="error" type="text" name="guest_name" value="">
+					<!--email-->
+					<label for="email_address"><strong><span class="required">*</span>Email:</strong></label>
+					<input id="post-email" class="error" type="text" name="email_address" value="">	
+					<!--message-->
+					<label for="post_message"><strong><span class="required">*</span>Message:</strong></label>
+					<textarea id="post-message" class="error" name="post_message"></textarea>	
+					<!--attachment-->
+					<label for="picture_file"><strong>Upload Picture:</strong></label>
+					<input id="post-image-size" name="size_constraint" type="hidden">
+					<input id="post-image" class="" name="picture_file" type="file">			
+					<!--submit:: hidden fields enforce file size and check if the form has been submitted-->
+				    <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
+				    <input type="hidden" name="submitted" value="1">  
+					<input class="submit" type="submit" name="submit" value="Let &#39;er rip">
+				</form>
+			</div>
+			<div class="span8 wall">
+				<h2>Guestbook</h2>
+				<script type="text/javascript">
+								$(document).ready(function(){
+									$("#post-name").removeClass("noerror").addClass("error");
+								});
+							</script><script type="text/javascript">
+								$(document).ready(function(){
+									$("#post-email").removeClass("noerror").addClass("error");
+								});
+							</script><script type="text/javascript">
+								$(document).ready(function(){
+									$("#post-message").removeClass("noerror").addClass("error");
+								});
+							</script><div class="alert alert-danger">File must be a JPG, JPEG, GIF or PNG and weigh &lt;2MB. <strong><a class="alert-link" href="./Exercise 2  Guestbook_files/Exercise 2  Guestbook.html">Start over?</a></strong></div><div class="alert alert-danger">Please complete all required fields. Or <strong><a class="alert-link" href="./Exercise 2  Guestbook_files/Exercise 2  Guestbook.html">start over</a></strong></div><div class="comment"><p>I'm awesome</p><hr><p>By <a href="mailto:mcknathannash@gmail.com">Nathan Nash</a> on 2013 July 30, 2:31 PM | <a href="http://localhost:8888/nnash_ex2/uploads/11_-_1_reasonably_small.jpg" data-lightbox="11_-_1_reasonably_small.jpg">Attachments <span class="badge">1</span></a></p></div>
+<div class="comment well"><p>test</p><hr><p>By <a href="mailto:mcknathannash@gmail.com">Nathan</a> on 2013 July 30, 2:34 PM</p></div>
+			</div>
+		</div>
+	</section>
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src=""><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>
