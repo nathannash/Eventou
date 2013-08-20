@@ -1,6 +1,6 @@
 <?php
 //ini_set('display_errors', 'On');
-include ("core/init.inc.php");
+include("core/init.inc.php");
 
 $errors = array();
 
@@ -15,11 +15,10 @@ if(isset($_POST['username_login'], $_POST['password_login']) && !empty($_POST['u
 		header('Location: http://localhost:8888/Eventou/');
 		die();
 	}
-	
 }
 
 //Check registration form
-if(isset($_POST['username_register'], $_POST['password_register'])){
+if(isset($_POST['username_register'], $_POST['email_register'], $_POST['password_register'])){
 	
 	//Check if username is empty
 	if(empty($_POST['username_register'])){
@@ -90,6 +89,9 @@ if(isset($_POST['username_register'], $_POST['password_register'])){
 					<!--Username-->
 					<label for="username_register">Username:</label>
 					<input type="text" name="username_register" />
+					<!--email-->
+					<label for="email_register">Email:</label>
+					<input type="text" name="email_register" />
 					<!--Password-->
 					<label for="password_register">Password:</label>
 					<input type="password" name="password_register" />

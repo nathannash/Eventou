@@ -1,6 +1,5 @@
 <?php include 'core/init.inc.php';?>
 <?php include 'header.php';?>
-<a href="index.php" id="" title="index">index</a>
 <body>
 	<div data-role="page">
 	    <!-- Admin/User Panel options -->
@@ -28,26 +27,18 @@
 		</div>
 		<!-- list of events -->
 		<div data-role="content" class="event-list">
-			<!--<ul data-role="listview" data-inset="true">
-			    <li>
-					<a href="/Eventou/event-description.html">
-			        <img width="100" height="100" style="background:#333;" />
-			        <h2>Broken Bells</h2>
-			        <p>Broken Bells</p></a>
-			    </li>
-			    <li>
-					<a href="/Eventou/event-description.html">
-			        <img width="100" height="100" style="background:#333;" />
-			        <h2>Warning</h2>
-			        <p>Hot Chip</p></a>
-			    </li>
-			    <li>
-					<a href="/Eventou/event-description.html">
-			        <img width="100" height="100" style="background:#333;" />
-			        <h2>Wolfgang Amadeus Phoenix</h2>
-			        <p>Phoenix</p></a>
-			    </li>
-			</ul>-->
+			<?php
+				$SQLString = "SELECT * FROM `event_system`";
+				$QueryResult = @mysql_query($SQLString);
+				
+				//Display events
+				echo '<ul data-role="listview" data-inset="true">';				
+				while(($Row = mysql_fetch_row($QueryResult)) !== FALSE) {
+					//Display event title, time and description from db
+					echo '<li><a href="/Eventou/event_description.php?event_id='.$Row[1].'"><h2>'.$Row[2].'</h2><p>'.$Row[3].'</p><p>'.$Row[7].'</p></a></li>';
+				}
+				echo '</ul>';
+			?>
 		</div>
 	</div>	
 </body>

@@ -1,3 +1,4 @@
+<?php include 'core/init.inc.php';?>
 <?php include 'header.php';?>
 <body>
 	<div data-role="page">
@@ -11,27 +12,23 @@
 			<h2>
 				<?php
 					session_start();
-					echo $_SESSION['username_login'];
+					echo "Hello, " . $_SESSION['username_login'] . "!";
 				?>
 			</h2>
 			<h2>My Events</h2>
-			<!--<ul data-role="listview" data-inset="true">
-			    <li><a href="#">
-			        <img width="100" height="100" style="background:#333;" />
-			        <h2>Broken Bells</h2>
-			        <p>Broken Bells</p></a>
-			    </li>
-			    <li><a href="#">
-			        <img width="100" height="100" style="background:#333;" />
-			        <h2>Warning</h2>
-			        <p>Hot Chip</p></a>
-			    </li>
-			    <li><a href="#">
-			        <img width="100" height="100" style="background:#333;" />
-			        <h2>Wolfgang Amadeus Phoenix</h2>
-			        <p>Phoenix</p></a>
-			    </li>
-			</ul>-->
+			<div data-role="content" class="event-list">
+				<?php
+					$SQLString = "SELECT * FROM `event_system`";
+					$QueryResult = mysql_query($SQLString);
+					
+					while(($Row = mysql_fetch_row($QueryResult)) !== FALSE) {
+						//Display event title and description from db
+						echo '<ul data-role="listview" data-inset="true">';				
+						echo '<li><a href="#"><h2>'.$Row[1].'</h2><p>'.$Row[6].'</p></a></li>';
+						echo '</ul>';
+					}
+				?>
+			</div>
 		</div><!-- .event-list -->
 	</div>	
 </body>
