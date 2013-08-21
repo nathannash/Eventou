@@ -19,11 +19,12 @@ function valid_credentials($user, $pass){
 }
 
 //adds a user to the database
-function add_user($user, $pass){
+function add_user($user, $pass, $email){
 	$user = mysql_real_escape_string(htmlentities($user));
 	$pass = sha1($pass);
+	$email = mysql_real_escape_string($email);
 	
-	mysql_query("INSERT INTO `user_system` (`user_name`, `user_password`) VALUES('{$user}','{$pass}') ");
+	mysql_query("INSERT INTO `user_system` (`user_name`, `user_email`, `user_password`) VALUES('{$user}', '{$email}', '{$pass}') ");
 }
 
 ?>

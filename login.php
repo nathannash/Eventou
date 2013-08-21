@@ -12,7 +12,7 @@ if(isset($_POST['username_login'], $_POST['password_login']) && !empty($_POST['u
 		$_SESSION['username_login'] = htmlentities($_POST['username_login']);
 		$_SESSION['loggedin'] = true;
 		
-		header('Location: http://localhost:8888/Eventou/');
+		header('Location: /Eventou');
 		die();
 	}
 }
@@ -42,12 +42,12 @@ if(isset($_POST['username_register'], $_POST['email_register'], $_POST['password
 	
 	//Register account and login
 	if(empty($errors)){
-		add_user($_POST['username_register'], $_POST['password_register']);
+		add_user($_POST['username_register'], $_POST['password_register'], $_POST['email_register']);
 		
 		$_SESSION['username'] = htmlentities($_POST['username']);		
 		$_SESSION['loggedin'] = true;
 		
-		header('Location: http://localhost:8888/Eventou/');
+		header('Location: /Eventou');
 		die();
 	}
 }
