@@ -44,7 +44,7 @@ if(isset($_POST['username_register'], $_POST['email_register'], $_POST['password
 	if(empty($errors)){
 		add_user($_POST['username_register'], $_POST['password_register']);
 		
-		$_SESSION['username'] = htmlentities($_POST['username']);
+		$_SESSION['username'] = htmlentities($_POST['username']);		
 		$_SESSION['loggedin'] = true;
 		
 		header('Location: http://localhost:8888/Eventou/');

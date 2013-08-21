@@ -38,6 +38,7 @@
 					echo '<li><a href="/Eventou/event_description.php?event_id='.$Row[1].'"><h2>'.$Row[2].'</h2><p>'.$Row[3].'</p><p>'.$Row[7].'</p></a></li>';
 				}
 				echo '</ul>';
+				mysql_close();
 			?>
 		</div>
 	</div>	

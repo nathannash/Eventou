@@ -16,6 +16,8 @@
 		$result = mysql_query("SELECT `user_id` FROM `user_system`");
 		$row = mysql_fetch_row($result);
 		$uid = $row[0];
+		session_start();
+		$username = $_SESSION['username_login'];
 		//Capture form data
 		$title = mysql_real_escape_string($_POST['title']);
 		$event_id = md5($title);
@@ -24,10 +26,13 @@
 		$activity = mysql_real_escape_string($_POST['activity']);
 		$participants = mysql_real_escape_string($_POST['participants']);
 		$description = mysql_real_escape_string($_POST['description']);
+		$attendTrue = 1;
 		
-		$SQLString = "INSERT INTO `event_system`(`user_id`,`event_id`, `title`, `date_time`, `location`, `activity`, `participants`, `description`) VALUES ('$uid','$event_id', '$title', '$time', '$location', $activity, $participants, '$description')";			
+		$SQLString = "INSERT INTO `event_system`(`user_id`,`event_id`, `title`, `date_time`, `location`, `activity`, `participants`, `description`) VALUES ('$uid','$event_id', '$title', '$time', '$location', $activity, $participants, '$description')";	
+		$SQLString2 = "INSERT INTO `rsvp_system`(`user_name`, `event_id`, `title`, `description`, `rsvp`) VALUES ('$username', '$event_id', '$title', '$description', $attendTrue)";		
 				
 		mysql_query($SQLString, $DBConnect);
+		mysql_query($SQLString2, $DBConnect);
 		header("Location: /Eventou");
 		mysql_close();
 	}

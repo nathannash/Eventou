@@ -12,24 +12,25 @@
 			<h2>
 				<?php
 					session_start();
-					echo "Hello, " . $_SESSION['username_login'] . "!";
+					$username = $_SESSION['username_login'];
+					echo "Hello, " . $username . "!";
 				?>
 			</h2>
 			<h2>My Events</h2>
 			<div data-role="content" class="event-list">
 				<?php
-					$SQLString = "SELECT * FROM `event_system`";
+					$SQLString = "SELECT * FROM rsvp_system WHERE user_name='$username'";
 					$QueryResult = mysql_query($SQLString);
 					
+					echo '<ul data-role="listview" data-inset="true">';				
 					while(($Row = mysql_fetch_row($QueryResult)) !== FALSE) {
 						//Display event title and description from db
-						echo '<ul data-role="listview" data-inset="true">';				
-						echo '<li><a href="#"><h2>'.$Row[1].'</h2><p>'.$Row[6].'</p></a></li>';
-						echo '</ul>';
+						echo '<li><a href="/Eventou/event_description.php?event_id='.$Row[1].'"><h2>'.$Row[2].'</h2><p>'.$Row[3].'</p></a></li>';
 					}
+					echo '</ul>';
 				?>
 			</div>
-		</div><!-- .event-list -->
+		</div><!-- event-list -->
 	</div>	
 </body>
 </html>
