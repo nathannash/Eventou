@@ -9,7 +9,17 @@ Find great friends through activities.
 /*------------------------------------------------------
 Globals
 ------------------------------------------------------*/
+.required {
+	font-weight:bold;
+	color:#f00;
+}
 
+.alert-danger {
+	color:#b94a48;
+	background-color:#f2dede;
+	border-color:#eed3d7;
+	padding:15px 0 15px 15px;
+}
 
 /*------------------------------------------------------
 Elements by heirarchy

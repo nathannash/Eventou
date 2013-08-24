@@ -3,11 +3,11 @@ session_start();
 ob_start();
 
 //Host details
-mysql_connect('localhost:8889', 'root', 'root');
+mysql_connect('mysql.nathannash.me', 'nnash', 'dcmb13');
 mysql_select_db('Eventou');
 
 //Database details
-$DBConnect = mysql_connect('localhost:8889', 'root', 'root');
+$DBConnect = mysql_connect('mysql.nathannash.me', 'nnash', 'dcmb13');
 $DBName = mysql_select_db('Eventou');
 
 //URL details

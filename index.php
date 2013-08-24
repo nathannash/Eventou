@@ -1,5 +1,5 @@
-<?php include 'core/init.inc.php';?>
-<?php include 'header.php';?>
+<?php include('core/init.inc.php');?>
+<?php include('templates/header.php');?>
 <body>
 	<div data-role="page">
 	    <!-- Admin/User Panel options -->
@@ -7,13 +7,17 @@
 			<ul>
 				<?php
 					session_start();
+					//Display link to admin panel for the appropriate user
+					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['username_login'] == 'admin'){
+						echo '<li><a href="http://'.$host.'/'.$base.'/templates/admin.php">Admin Panel</a></li>';
+					}	
 					//If the use is logged in display this menu
 					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-						echo '<li><a href="/Eventou/profile.php">'. $_SESSION['username_login'] .'</a></li>';
-						echo '<li><a href="/Eventou/create_event.php">Create Event</a></li>';
-						echo '<li><a href="/Eventou/logout.php">Logout</a></li>';
+						echo '<li><a href="http://'.$host.'/'.$base.'/templates/profile.php">'. $_SESSION['username_login'] .'</a></li>';
+						echo '<li><a href="http://'.$host.'/'.$base.'/templates/create_event.php">Create Event</a></li>';
+						echo '<li><a href="http://'.$host.'/'.$base.'/core/logout.php">Logout</a></li>';
 					} else {
-						echo '<li><a href="/Eventou/login.php">Login/Register</a></li>';
+						echo '<li><a href="http://'.$host.'/'.$base.'/core/login.php">Login/Register</a></li>';
 					}
 				?>					
 			</ul>
@@ -35,9 +39,9 @@
 				echo '<ul data-role="listview" data-inset="true">';				
 				while(($Row = mysql_fetch_row($QueryResult)) !== FALSE) {
 					//Display event title, time and description from db
-					echo '<li><a href="/Eventou/event_description.php?event_id='.$Row[1].'"><h2>'.$Row[2].'</h2><p>'.$Row[3].'</p><p>'.$Row[7].'</p></a></li>';
+					echo '<li><a href="/'.$base.'/templates/event_description.php?event_id='.$Row[1].'"><h2>'.$Row[2].'</h2><p>'.$Row[3].'</p><p>'.$Row[7].'</p></a></li>';
 				}
-				echo '</ul>';
+				echo '</ul>';				
 				mysql_close();
 			?>
 		</div>
