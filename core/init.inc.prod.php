@@ -3,7 +3,7 @@ session_start();
 ob_start();
 
 //Host details
-mysql_connect('mysql.nathannash.me', 'nnash', 'dcmb13');
+mysql_connect('mysql.nathannash.me', 'nnash', 'root');
 mysql_select_db('Eventou');
 
 //Database details
